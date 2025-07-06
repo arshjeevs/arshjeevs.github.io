@@ -23,12 +23,12 @@ function ProfileCard() {
             rel="noopener noreferrer"
             className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 hover:scale-[1.04] focus:scale-[1.04]"
             tabIndex={0}
-            aria-label="Harshan's GitHub"
+            aria-label="Harshan&apos;s GitHub"
             draggable={false}
             style={{ userSelect: "none" }}
           >
             <Image
-              alt="Harshan's profile"
+              alt="Harshan&apos;s profile"
               src="/Photo.png"
               width={80}
               height={80}
@@ -59,16 +59,16 @@ function ProfileCard() {
         style={{ wordSpacing: "0.25em" }}
       >
         <p>
-          I'm <span className="text-white font-medium">Harshan</span>, a 19-year-old developer and student at NIT Calicut, currently trying to balance deep learning models and deep sleep (the second one's a work in progress).
+          I&apos;m <span className="text-white font-medium">Harshan</span>, a 19-year-old developer and student at NIT Calicut, currently trying to balance deep learning models and deep sleep (the second one&apos;s a work in progress).
         </p>
         <p>
           I love building things—from scratch neural networks and language models to full-stack apps and FPGA-powered projects. I dabble in both low-level systems and high-level ML, because why not suffer from both ends?
         </p>
         <p>
-          When I'm not coding, you'll find me binge-watching tech videos, obsessing over clean code, playing chess, or just vibing to lo-fi while pretending to be productive.
+          When I&apos;m not coding, you&apos;ll find me binge-watching tech videos, obsessing over clean code, playing chess, or just vibing to lo-fi while pretending to be productive.
         </p>
         <p>
-          Always curious, always experimenting—and maybe one day, my friends will stop asking me to "fix the Wi-Fi" just because I study engineering.
+          Always curious, always experimenting—and maybe one day, my friends will stop asking me to &quot;fix the Wi-Fi&quot; just because I study engineering.
         </p>
       </div>
     </section>
@@ -107,7 +107,7 @@ function SkillsSection() {
   return (
     <section className="mt-12">
       <h2 className="text-4xl font-mono text-gray-100 mb-2 tracking-widest">Skills <span className="text-gray-500 text-base font-normal ml-2">Which I use/know</span></h2>
-      <p className="text-gray-400 mb-4">These are the technologies I've learned and worked with. This list is constantly evolving as I continue to learn and grow as a developer.</p>
+      <p className="text-gray-400 mb-4">These are the technologies I&apos;ve learned and worked with. This list is constantly evolving as I continue to learn and grow as a developer.</p>
       <div className="space-y-4">
         {/* LANGUAGES */}
         <div className="mb-6">
@@ -164,7 +164,12 @@ function SkillsSection() {
   );
 }
 
-function SkillBadge({ icon, label }) {
+type SkillBadgeProps = {
+  icon: string;
+  label: string;
+};
+
+function SkillBadge({ icon, label }: SkillBadgeProps) {
   return (
     <button
       type="button"
@@ -172,16 +177,27 @@ function SkillBadge({ icon, label }) {
       aria-label={label}
       className="flex items-center bg-[#18181b] border border-[#27272a] rounded-lg px-3 py-2 text-white font-medium text-xs gap-2 shadow transition hover:border-[#5aad62] focus:outline-none"
     >
-      <img src={icon} alt={`${label} icon`} className="w-4 h-4" style={{ color: 'transparent' }} />
+      <Image src={icon} alt={`${label} icon`} width={16} height={16} className="w-4 h-4" style={{ color: 'transparent' }} />
       <span>{label}</span>
     </button>
   );
 }
 
+function Footer() {
+  return (
+    <footer className="w-full py-6 mt-12 flex justify-center items-center border-t border-[#232323] text-gray-500 text-sm">
+      <span>
+        © {new Date().getFullYear()} Harshan Jeevanantham. Built with Next.js &amp; Tailwind CSS.
+        <a href="https://github.com/arshjeevs" target="_blank" rel="noopener noreferrer" className="ml-2 underline hover:text-gray-300">GitHub</a>
+      </span>
+    </footer>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-[#171717] flex justify-center items-center">
-      <div className="max-w-3/8 pt-12">
+    <div className="min-h-screen w-full bg-[#171717] flex flex-col justify-center items-center">
+      <div className="max-w-3/8 pt-12 w-full flex-1">
         <main className="flex flex-col items-center justify-center">
           <ProfileCard/>
           {/* <ActionButtons /> */}
@@ -192,6 +208,7 @@ export default function Home() {
           <SkillsSection />
         </main>
       </div>
+      <Footer />
     </div>
   );
 }
