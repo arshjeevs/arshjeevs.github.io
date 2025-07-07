@@ -32,7 +32,7 @@ const ProfileCard = () => {
           </h1>
           <p className="mt-1 font-jetbrains-mono text-sm text-[#8ab4f8] text-left font-normal tracking-wider">
             <a
-              href="https://twitter.com/arshjeevs"
+              href="https://github.com/arshjeevs"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer"
