@@ -10,8 +10,6 @@ const ProjectsSection = () => {
       <div className="space-y-10">
         <ProjectCard
           href="https://github.com/arshjeevs/EED-ADHD"
-          imgSrc="/vercel.svg"
-          imgAlt="EEG-based ADHD Detection System"
           title="EEG-based ADHD Detection System"
           githubHref="https://github.com/arshjeevs/EED-ADHD"
           description={
@@ -20,8 +18,6 @@ const ProjectsSection = () => {
         />
         <ProjectCard
           href="https://github.com/arshjeevs/Sorting-Visualizer"
-          imgSrc="/next.svg"
-          imgAlt="Algorithm Visualization Platform"
           title="Algorithm Visualization Platform"
           githubHref="https://github.com/arshjeevs/Sorting-Visualizer"
           description={
@@ -30,8 +26,6 @@ const ProjectsSection = () => {
         />
         <ProjectCard
           href="https://github.com/arshjeevs/Hack_PY_App"
-          imgSrc="/window.svg"
-          imgAlt="PDF Document Intelligence System"
           title="PDF Document Intelligence System"
           githubHref="https://github.com/arshjeevs/Hack_PY_App"
           description={
